@@ -8,7 +8,7 @@ cursor = connection.cursor()
 cursor.execute("""
 CREATE TABLE urls (
   url TEXT,
-  id INTEGER PRIMARY KEY,
+  id TEXT PRIMARY KEY,
   count INTEGER
 )
 """)
