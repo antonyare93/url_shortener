@@ -25,7 +25,7 @@ def read_root():
 
 @shortener.get('/{id}')
 def get_long(id: str):
-    connection = sqlite3.Connection('urls_database.db')
+    connection = sqlite3.Connection('../urls_database.db')
     cursor = connection.cursor()
 
     cursor.execute(f"SELECT url FROM urls WHERE id = '{id}'")
@@ -36,8 +36,6 @@ def get_long(id: str):
 
     connection.commit()
     connection.close()
-
-    
 
     return RedirectResponse(url=url[0])
 
