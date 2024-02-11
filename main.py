@@ -48,5 +48,5 @@ async def shrink_url(url: str, alias: str = ''):
         return json.dumps(dict(url=url, id=id, count=0))
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:shortener", host="0.0.0.0", port=8000, reload=True)
     
