@@ -1,3 +1,4 @@
+import uvicorn
 import uuid
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
@@ -45,4 +46,7 @@ async def shrink_url(url: str, alias: str = ''):
     if response.status == 200:
         id = str(uuid.uuid4()).replace('-','')[:12]
         return json.dumps(dict(url=url, id=id, count=0))
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
     
